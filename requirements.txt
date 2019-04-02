@@ -1,0 +1,8 @@
+requests
+numpy
+pandas
+scipy
+tqdm
+sklearn
+xgboost
+joblib
