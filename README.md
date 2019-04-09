@@ -9,7 +9,7 @@ by Joe Ganser
 
 This research was the product of a data driven healthcare hackathon I participated sponsored by [Accenture](https://www.accenture.com) and the [School of AI](https://www.theschool.ai/). **I was the team leader, and our team came in first place for the NY division.** Here we use blood oxygen and electrocardiogram data to predict the rate at which people breath. It turns out, this data can be extracted from a smart watch. Using this data, we could predict a persons respiratory rate with 90% accuracy.
 
-<img src='images/group_shot.jpg' width='50%' height='50%'>
+<img src='https://raw.githubusercontent.com/JoeGanser/Predicting_Respiratory_Rate/master/images/group_shot.jpg' width='50%' height='50%'>
 
 ### CONTENTS
 * **I. Introducing the problem**
@@ -35,7 +35,7 @@ This research was the product of a data driven healthcare hackathon I participat
 
 **Our official presentation title**
 
-<img src='images/catching_your_breath.png' width='30%' height='30%'>
+<img src='https://raw.githubusercontent.com/JoeGanser/Predicting_Respiratory_Rate/master/images/catching_your_breath.png' width='40%' height='40%'>
 
 # I. Introducing the problem 
 
@@ -47,7 +47,7 @@ Both ECG and PPG data can be extracted from a smart watch at the same level of a
 
 The data used for this analysis was not actually collected from a smart watch, but smart watches have the capability to collect the same data. The data used in this analysis was from 53 patients in intensive care, where their ECG, PPG and breathing rates were measured. (4,5,6)
 
-<img src='images/smart_watch.png' width='20%' height='20%'>
+<img src='https://raw.githubusercontent.com/JoeGanser/Predicting_Respiratory_Rate/master/images/smart_watch.png' width='50%' height='50%'>
 
 **Goals of the analysis**
 
@@ -109,7 +109,7 @@ For each person in the study, this amounted to about 60,000 rows. When all 53 pe
 **Visualizing the fundamental data**
 
 The data was fundamentally time series based. Here are a few snapshots of some of the key features;
-<img src='images/graphics.png' width='60%' height='60%'>
+<img src='https://raw.githubusercontent.com/JoeGanser/Predicting_Respiratory_Rate/master/images/graphics.png' width='60%' height='60%'>
 
 **Feature engineering**
 
@@ -154,7 +154,7 @@ Time (s)| RESP| PLETH| V| AVR| II| HR| PULSE| SpO2| RESP_Min| PLETH_Min| V_Min| 
 0.024|0.27566|0.57771|0.32941|0.04102|0.84375|93|92|96|0.25806|0.37732|0.07451|-0.09961|-0.21484|1.0|0.59531|0.87059|1.0254|1.3438|0.70822|0.46446|0.75551|0.81947|-0.02431|-1.40052|-1.08775|10.3465|13.15985|13.94906|-0.24258|0.48232|-3.05758|-3.3357|3.5823
 0.032|0.2825|0.57283|0.07843|-0.09961|1.3184|93|92|96|0.25806|0.37732|0.07451|-0.09961|-0.21484|1.0|0.59531|0.87059|1.0254|1.3438|0.70822|0.46446|0.75551|0.81947|-0.02431|-1.40052|-1.08775|10.3465|13.15985|13.94906|-0.24258|0.48232|-3.05758|-3.3357|3.5823
 
-# ** III. Putting the big data on Amazon Web Service**
+# III. Putting the big data on Amazon Web Service
 
 During the hackathon, Accenture provided us with a $125 gift certificate to create and Amazon Web Service EC2 instance.
 
@@ -257,7 +257,7 @@ Clearly, it was the random forest regressor that achieved the best results.
 
 Aside from simply metrics of performance, it's also good to look at how well the model has been fit. Here we see distribution of errors on the train set and the test set;
 
-<img src='images/RF_fit.png' width='80%' height='80%'>
+<img src='https://raw.githubusercontent.com/JoeGanser/Predicting_Respiratory_Rate/master/images/RF_fit.png' width='80%' height='80%'>
 
 The frequency count may be slightly different in scale, but this is ok because its size difference is proprotional to the size differences in the train set and the test set.
 
@@ -265,7 +265,7 @@ The frequency count may be slightly different in scale, but this is ok because i
 
 One of the beauties of the random forest package, is it allows us to create an output describing the magnitude of feature importances.
 
-<img src='images/feature_importance.png' width='80%' height='80%'>
+<img src='https://raw.githubusercontent.com/JoeGanser/Predicting_Respiratory_Rate/master/images/feature_importance.png' width='80%' height='80%'>
 
 It was also noticed that if we eliminated the plethysmogram data, we could still predict breathing rate with upto about 80% accuracy.
 
@@ -288,15 +288,19 @@ Being able to predict user's breathing rate with home based wearable technology 
 
 Perhaps these algorithms and data collection techniques can be put into smart watch/phone apps. Software could be created that allows for automation of doctor patient interaction, notifying healthcare professionals in real time when a serious issue arises.
 
+Smart watches might save lives one day!
+
+<img src='https://raw.githubusercontent.com/JoeGanser/Predicting_Respiratory_Rate/master/images/smart_watch_ECG.gif'>
+
 # VI. Links to coded notebooks
 
-* Downloading and aggregating the data
-* Modelling the data
-* Random forest performance
+* [Downloading and aggregating the data](https://github.com/JoeGanser/Predicting_Respiratory_Rate/blob/master/download_data.ipynb)
+* [Modelling the data](https://github.com/JoeGanser/Predicting_Respiratory_Rate/blob/master/Modelling_Comparison_on_person12.ipynb)
+* [Random forest performance](https://github.com/JoeGanser/Predicting_Respiratory_Rate/blob/master/random_forest_performance.ipynb)
 
 # VII. References
-1. **Electrocardiogram (ECG): ** https://en.wikipedia.org/wiki/Electrocardiography
-2. **Photoplethysmogram (PPG): ** https://en.wikipedia.org/wiki/Photoplethysmogram#Photoplethysmograph
+1. **Electrocardiogram (ECG)** https://en.wikipedia.org/wiki/Electrocardiography
+2. **Photoplethysmogram (PPG)** https://en.wikipedia.org/wiki/Photoplethysmogram#Photoplethysmograph
 3. **Probabilistic Estimation of Respiratory Rate from Wearable Sensors, Pimentel, Charlton, Clifton, Institute of Biomedical Engineering, Oxford University** http://www.robots.ox.ac.uk/~davidc/pubs/springer2015.pdf
 4. **PPG data can be extracted using smart watches:** https://www.ncbi.nlm.nih.gov/pubmed/26737690
 5. **ECG data cen be extracted using smart watches:** https://www.theatlantic.com/technology/archive/2019/02/the-apple-watch-ekgs-hidden-purpose/573385/
